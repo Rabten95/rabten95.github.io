@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangay Rabten | Cybersecurity Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Roboto', sans-serif; background: #f4f7f9; color: #333; }
+    nav { background: #1a1a1a; color: #fff; padding: 15px 20px; position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; }
+    nav a:hover { color: #1a73e8; }
+    header { background: linear-gradient(135deg, #1a73e8, #1a1a1a); color: #fff; text-align: center; padding: 100px 20px; }
+    header h1 { font-size: 3rem; margin: 0; }
+    header p { font-size: 1.3rem; margin-top: 10px; }
+    section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+    h2 { color: #1a1a1a; border-bottom: 2px solid #1a73e8; padding-bottom: 5px; margin-bottom: 20px; }
+    .card { background: #fff; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .skills-bar { background: #ddd; border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
+    .skills-bar div { height: 20px; background: #1a73e8; text-align: right; padding-right: 5px; color: #fff; font-size: 0.8rem; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .portfolio-item { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .badge { display: inline-block; padding: 6px 12px; margin: 5px; background-color: #0073b1; color: white; border-radius: 5px; font-size: 0.9rem; }
+    footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; margin-top: 40px; }
+    button { background: #1a73e8; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #155ab6; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div><strong>Sangay Rabten</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <h1>Hi, I’m Sangay 👋</h1>
+    <p>Cybersecurity Professional | Network Support | IT Infrastructure Enthusiast</p>
+    <a href="resume.pdf" download><button>Download Resume</button></a>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am a cybersecurity and IT professional with experience in network support, secure programming, vulnerability assessment, and system administration. I’m passionate about protecting digital assets and building secure, scalable IT infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <p>Cybersecurity</p>
+      <div class="skills-bar"><div style="width: 85%">85%</div></div>
+      <p>Networking</p>
+      <div class="skills-bar"><div style="width: 80%">80%</div></div>
+      <p>Secure Programming</p>
+      <div class="skills-bar"><div style="width: 75%">75%</div></div>
+      <p>Cloud & Admin</p>
+      <div class="skills-bar"><div style="width: 70%">70%</div></div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><h3>Network Infrastructure Design</h3><p>Designed and implemented a secure multi-floor network using OSPF, VLANs, and ACLs.</p></div>
+      <div class="portfolio-item"><h3>Firewall Security</h3><p>Configured iptables for stateful filtering and DNS services on Linux servers.</p></div>
+      <div class="portfolio-item"><h3>Snort IDS Project</h3><p>Built intrusion detection rules and tested detection against pcap files.</p></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="card">
+      <span class="badge">CompTIA Security+</span>
+      <span class="badge">CompTIA Network+</span>
+      <span class="badge">Cisco CCNA</span>
+      <span class="badge">Azure Fundamentals</span>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="card">
+      <p><a href="https://www.linkedin.com/pulse/article-title-1" target="_blank">🔗 The Future of Cybersecurity in Cloud Environments</a></p>
+      <p><a href="https://www.linkedin.com/pulse/article-title-2" target="_blank">🔗 Secure Coding Practices: Avoiding Common Vulnerabilities</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:sangay@example.com">sangay@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sangay-rabten/" target="_blank">linkedin.com/in/sangay-rabten</a></p>
+      <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sangay Rabten | Cybersecurity Portfolio
+  </footer>
+
+</body>
+</html>
