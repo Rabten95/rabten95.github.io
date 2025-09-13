@@ -53,11 +53,12 @@ nav .menu a:hover {
   color: #fff;
 }
 
+/* lighter overlay for better contrast */
 .hero::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.15); /* overlay */
+  background: rgba(0,0,0,0.15);
   z-index: 0;
 }
 
@@ -79,13 +80,13 @@ nav .menu a:hover {
   font-size: 3rem;
   font-weight: 900;
   color: #ffffff; /* pure white */
-  text-shadow: 0 0 12px rgba(0,0,0,0.9); /* strong dark edge for readability */
+  text-shadow: 0 0 12px rgba(0,0,0,0.9); /* strong edge shadow */
 }
 
 .hero p {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #f1f5f9; /* slightly softer white */
+  color: #f1f5f9; /* softer white for balance */
   text-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
 
