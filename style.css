@@ -48,7 +48,7 @@ nav .menu a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1a73e8, #004aad);
+  background: linear-gradient(135deg, #004aad, #001f4d);
   color: #fff;
 }
 .hero h1 {
