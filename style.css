@@ -203,6 +203,37 @@ form button:hover {
   background: #004aad;
 }
 
+/* Services */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+.service-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card h2 {
+  color: #004aad;
+  margin-bottom: 10px;
+}
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
 /* ===== Footer ===== */
 footer {
   background: #1a1a1a;
