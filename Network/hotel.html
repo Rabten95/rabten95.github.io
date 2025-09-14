@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Chain Network Design — Perth & Sydney | Sangay Rabten</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Sangay<span>Rabten</span></div>
+    <div class="menu">
+      <a href="../index.html">Home</a>
+      <a href="../profile.html">Profile</a>
+      <a href="../services.html">Services</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hotel Chain Network Design — Perth & Sydney</h1>
+        <p>Scenario-based project covering VLANs, MST, OSPF multi-area, ACLs, NAT, PPP, and HSRP</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Scenario & Requirements</h2>
+    <p>
+      A hotel chain has two major sites: <strong>Perth</strong> and <strong>Sydney</strong>. Each site contains 56 guests across two floors plus staff. The corporate network uses the private addressing space <code>10.0.0.0/8</code>.
+      The design must be scalable and secure. Key requirements are listed below.
+    </p>
+
+    <h3>Requirements</h3>
+    <ul>
+      <li>VLAN segmentation: VLAN 1000 = Staff, VLAN 20 = Guest Level 20, VLAN 3 = Guest Level 3 (student-based)</li>
+      <li>Trunking: 802.1Q on distribution→access links</li>
+      <li>MST spanning-tree: name <code>HCG</code> revision 1; VLAN→MST instance mapping described in configs</li>
+      <li>Inter-VLAN routing on distribution (L3) switches + OSPF multi-area:
+        <ul>
+          <li>Perth uses Area 1 (10.1.0.0/16)</li>
+          <li>Sydney uses Area 2 (10.2.0.0/16)</li>
+          <li>Perth↔Sydney backbone Area 0 (10.0.255.0/30)</li>
+        </ul>
+      </li>
+      <li>Access Control:
+        <ul>
+          <li>Guests cannot access internal networks (10.0.0.0/8)</li>
+          <li>Block phishing IP range: 1.2.3.4–1.2.3.10</li>
+          <li>Guests allowed only HTTP, HTTPS, and ICMP</li>
+        </ul>
+      </li>
+      <li>ISP connectivity: PPP serial links with CHAP, NAT pools, default route advertisement into OSPF</li>
+      <li>HSRP for Staff VLAN (1000) with virtual gateway <code>10.1.128.1</code> and preempt priorities</li>
+    </ul>
+
+    <h2>Network Diagram</h2>
+    <p>
+      Add your diagram image here. Export your topology from Packet Tracer / draw.io / Visio as <code>hotel_network.png</code> and place it in <code>/images/hotel_network.png</code>.
+    </p>
+    <img src="../images/hotel_network.png" alt="Hotel Network Diagram" style="max-width:100%; border-radius:8px; border:1px solid #ddd;">
+
+    <h2>Full Configuration</h2>
+    <p>Below are the commands and configuration you provided — preserved verbatim for reproducibility. Use them in your lab to build the topology and test behaviour (MST roots, OSPF areas, ACLs, NAT, and HSRP).</p>
+
+    <h2>Per-Device Configurations</h2>
+    <p>
+      Each device configuration is shown in collapsible sections. You can also <strong>download</strong> them directly for use in Packet Tracer / GNS3.
+    </p>
+
+    <div class="device-configs">
+    
+      <details>
+        <summary>PERCORE (Core Router)</summary>
+        <pre><code>
+    [Paste PERCORE config here]
+        </code></pre>
+        <a href="../configs/PERCORE.cfg" download>⬇ Download PERCORE.cfg</a>
+      </details>
+    
+      <details>
+        <summary>PERDL1 (Distribution Switch 1)</summary>
+        <pre><code>
+    [Paste PERDL1 config here]
+        </code></pre>
+        <a href="../configs/PERDL1.cfg" download>⬇ Download PERDL1.cfg</a>
+      </details>
+    
+      <details>
+        <summary>PERDL2 (Distribution Switch 2)</summary>
+        <pre><code>
+    [Paste PERDL2 config here]
+        </code></pre>
+        <a href="../configs/PERDL2.cfg" download>⬇ Download PERDL2.cfg</a>
+      </details>
+    
+      <details>
+        <summary>PERAL1 (Access Layer 1)</summary>
+        <pre><code>
+    [Paste PERAL1 config here]
+        </code></pre>
+        <a href="../configs/PERAL1.cfg" download>⬇ Download PERAL1.cfg</a>
+      </details>
+    
+      <!-- repeat for PERAL2, PERGUEST1, PERSTAFF1, etc. -->
+    
+      <details>
+        <summary>SYDCORE (Core Router)</summary>
+        <pre><code>
+    [Paste SYDCORE config here]
+        </code></pre>
+        <a href="../configs/SYDCORE.cfg" download>⬇ Download SYDCORE.cfg</a>
+      </details>
+    
+      <!-- repeat for SYDDL1, SYDDL2, SYDAL1, SYDAL2, SYDGUEST1, SYDSTAFF1, SYDGUEST2, SYDSTAFF2 -->
+    
+      <details>
+        <summary>Global ACL, NAT & HSRP Configurations</summary>
+        <pre><code>
+    [Paste shared ACL/NAT/HSRP config here]
+        </code></pre>
+        <a href="../configs/ACL_NAT_HSRP.cfg" download>⬇ Download ACL_NAT_HSRP.cfg</a>
+      </details>
+    
+    </div>
+
+
+    <h2>Notes & How to use</h2>
+    <ul>
+      <li>Place the network diagram image at: <code>/images/hotel_network.png</code>.</li>
+      <li>This page uses plain <code>&lt;pre&gt;&lt;code&gt;</code> blocks so you can copy commands directly into lab devices.</li>
+      <li>Small syntax issues or typos (e.g. `ip add 255.255.255.255 255.255.255.0`) should be fixed before deploying — these were included exactly as in the provided inputs; I preserved them for traceability. I can clean and correct them if you want.</li>
+      <li>If you'd like, I can also create separate downloadable text files per-device (e.g. `PERCORE.cfg`, `PERDL1.cfg`) so you can push them to a lab/Packet Tracer import folder.</li>
+    </ul>
+
+    <h2>Key learning points</h2>
+    <ul>
+      <li>MST reduces STP zones while maintaining VLAN separation — root design balances load between PERDL1 &amp; SYDDL2 as primary roots for different instances.</li>
+      <li>OSPF summarization reduces route table size at area boundaries (area-range commands provided).</li>
+      <li>ACLs are applied on VLAN SVI interfaces and on serial interfaces (outbound) to block phishing IPs and restrict guest protocols.</li>
+      <li>NAT overload allows many internal hosts to share a small public address pool; PPP with CHAP secures ISP authentication.</li>
+      <li>HSRP provides virtual gateway redundancy for Staff VLANs — set priorities and preempt so preferred device assumes active role.</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Sangay Rabten | Project: Hotel Chain Network
+  </footer>
+</body>
+</html>
