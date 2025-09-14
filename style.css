@@ -243,3 +243,28 @@ footer {
   margin-top: 60px;
 }
 
+/* Device configs collapsible */
+.device-configs details {
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:10px 15px;
+  background:#fff;
+  box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+.device-configs summary {
+  font-weight:600;
+  color:#1a73e8;
+  cursor:pointer;
+  margin-bottom:8px;
+}
+.device-configs summary:hover {
+  text-decoration:underline;
+}
+.device-configs a {
+  display:inline-block;
+  margin-top:10px;
+  font-size:0.9rem;
+  color:#1a73e8;
+}
+
