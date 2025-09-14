@@ -1,0 +1,25 @@
+!
+ip access-list extended PREVENT_GUEST_TO_INTRANET
+ deny ip any 10.0.0.0 0.255.255.255
+ permit ip any any
+!
+ip access-list standard BLOCK_PHISHING
+ deny 1.2.3.4 0.0.0.3
+ deny 1.2.3.8 0.0.0.1
+ deny host 1.2.3.10
+ permit any
+!
+ip access-list extended GUEST_INTERNET_POLICY
+ permit tcp any any eq 80
+ permit tcp any any eq 443
+ permit icmp any any echo
+ permit udp any host 224.0.0.2 eq 1985
+ permit ospf any any
+ deny ip any any
+!
+interface vlan1000
+ standby 1 ip 10.1.128.1
+ standby 1 priority 110
+ standby 1 preempt
+!
+end
