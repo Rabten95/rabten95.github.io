@@ -68,6 +68,55 @@
 
     </div>
   </section>
+ 
+  <!-- Chat Button -->
+  <button id="chat-button">💬</button>
+
+  <!-- Chatbox -->
+  <div id="chatbox-container">
+    <div id="chatbox"></div>
+    <div id="chat-input">
+      <input id="input" type="text" placeholder="Ask me anything...">
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatButton = document.getElementById("chat-button");
+    const chatContainer = document.getElementById("chatbox-container");
+    const chatbox = document.getElementById("chatbox");
+    const input = document.getElementById("input");
+    const send = document.getElementById("send");
+
+    // Toggle chat popup
+    chatButton.onclick = () => {
+      chatContainer.style.display = 
+        chatContainer.style.display === "flex" ? "none" : "flex";
+    };
+
+    // Send message
+    async function sendMessage() {
+      const userMsg = input.value;
+      if (!userMsg) return;
+      chatbox.innerHTML += `<p><b>You:</b> ${userMsg}</p>`;
+      input.value = "";
+
+      // Call backend API
+      const response = await fetch("https://your-backend-api.com/ask", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({question: userMsg})
+      });
+      const data = await response.json();
+      chatbox.innerHTML += `<p><b>SangayAI:</b> ${data.answer}</p>`;
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    send.onclick = sendMessage;
+    input.addEventListener("keypress", e => {
+      if (e.key === "Enter") sendMessage();
+    });
+  </script>
 
   <footer>
     &copy; 2025 Sangay Rabten | Cybersecurity Portfolio
