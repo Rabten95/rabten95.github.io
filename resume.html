@@ -169,6 +169,20 @@
   .skill-card p{ font-size:14px; color:var(--muted); line-height:1.6; }
   .skill-card p b{ color:var(--text); font-weight:500; }
 
+  .lang-list{ display:flex; flex-direction:column; gap:9px; }
+  .lang-row{ display:flex; align-items:center; gap:10px; }
+  .lang-name{
+    font-family:var(--mono); font-size:12.5px; color:var(--text);
+    width:62px; flex-shrink:0;
+  }
+  .lang-bar{
+    flex:1; height:6px; background:var(--panel-2); border-radius:3px; overflow:hidden;
+  }
+  .lang-bar i{
+    display:block; height:100%; border-radius:3px;
+    background:linear-gradient(90deg, var(--green), var(--cyan));
+  }
+
   /* experience timeline */
   .job{ position:relative; padding-left:28px; margin-bottom:38px; }
   .job:last-child{ margin-bottom:0; }
@@ -251,14 +265,14 @@
       <a href="index.html" style="font-family:var(--mono); font-size:11px; color:var(--muted); display:inline-flex; align-items:center; gap:6px; margin-bottom:18px;">&larr; back to portfolio</a>
       <div class="status-line"><span class="status-dot"></span>system online — open to work</div>
       <div class="name">SANGAY<br>RABTEN</div>
-      <div class="role">cyber_security <span class="sep">×</span> network_engineer <span class="sep">×</span> dev</div>
+      <div class="role">cyber_security <span class="sep">×</span> network_eng <span class="sep">×</span> dev</div>
 
       <div class="contact">
         <div class="contact-row"><span class="k">⌖</span> Spearwood, WA 6163</div>
-        <div class="contact-row"><span class="k">☏</span> <a href="tel:0431679649">0431 679 649</a></div>
+        <div class="contact-row"><span class="k">☏</span> <a href="mailto:srabten10@gmail.com?subject=Request%20for%20Contact%20Number&body=Hi%20Sangay%2C%0A%0AI%27d%20like%20to%20get%20in%20touch%20regarding%20a%20role%2Fopportunity.%20Could%20you%20share%20your%20phone%20number%3F%0A%0AThanks%2C">Request phone number</a></div>
         <div class="contact-row"><span class="k">✉</span> <a href="mailto:srabten10@gmail.com">srabten10@gmail.com</a></div>
-        <div class="contact-row"><span class="k">in</span> <a href="https://www.linkedin.com/in/sangay-rabten/" target="_blank">linkedin.com/in/sangay-rabten</a></div>
-        <div class="contact-row"><span class="k">⌥</span> <a href="https://github.com/Rabten95/" target="_blank">github.com/rabten66</a></div>
+        <div class="contact-row"><span class="k">in</span> <a href="#" target="_blank">linkedin.com/in/sangayrabten</a></div>
+        <div class="contact-row"><span class="k">⌥</span> <a href="#" target="_blank">github.com/sangayrabten</a></div>
       </div>
 
       <nav class="toc">
@@ -306,6 +320,16 @@
         <div class="skill-card">
           <h4>software_dev</h4>
           <p><b>Python</b> (scripting &amp; automation), <b>PowerShell</b>, WordPress/CMS development, Moodle LMS development &amp; administration, MySQL/database-backed web systems, Git/GitHub</p>
+        </div>
+        <div class="skill-card">
+          <h4>languages</h4>
+          <div class="lang-list">
+            <div class="lang-row"><span class="lang-name">Python</span><div class="lang-bar"><i style="width:85%"></i></div></div>
+            <div class="lang-row"><span class="lang-name">PHP</span><div class="lang-bar"><i style="width:70%"></i></div></div>
+            <div class="lang-row"><span class="lang-name">HTML</span><div class="lang-bar"><i style="width:90%"></i></div></div>
+            <div class="lang-row"><span class="lang-name">CSS</span><div class="lang-bar"><i style="width:85%"></i></div></div>
+            <div class="lang-row"><span class="lang-name">Java</span><div class="lang-bar"><i style="width:60%"></i></div></div>
+          </div>
         </div>
         <div class="skill-card">
           <h4>networking</h4>
@@ -443,7 +467,7 @@
     </section>
 
     <footer>
-      <span class="blink">●</span> end_of_file — last updated 2025 / 4— built with HTML/CSS, no frameworks
+      <span class="blink">●</span> end_of_file — last updated 2026-06 — built with HTML/CSS, no frameworks
     </footer>
 
   </main>
